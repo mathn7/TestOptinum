@@ -1,5 +1,4 @@
 using LinearAlgebra, Test
-include("fonctions_de_tests.jl")
 
 "#afficher_resultats nous affiche les sorties du lagrangien augmenté"
 function afficher_resultats(algo,nom_fct,point_init,xmin,fxmin,flag,sol_exacte,nbiters)
