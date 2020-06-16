@@ -1,5 +1,4 @@
 using LinearAlgebra, Test
-include("fonctions_de_tests.jl")
 
 "#afficher_resultats nous affiche les sorties du lagrangien augmenté"
 function afficher_resultats(algo,nom_fct,point_init,xmin,fxmin,flag,sol_exacte,nbiters)
@@ -37,12 +36,6 @@ function test_Lagrangien_Augmente(afficher,Lagrangien_Augmente::Function)
 	"#ensemble d'algorithmes d'optimisation sans contraintes"
 	algos = ["newton","gct","cauchy"]
 
-
-	"#solutions exactes"
-	sol_exacte_fct1 = [0.5 ; 1.25 ; 0.5]
-	sol_exacte_fct2 = [0.9072339605110892; 0.82275545631455]
-
-
 	"#norme de l'écart entre la solution trouvée et celle attendue"
 	normerreur = 1e-4
 
@@ -71,22 +64,22 @@ function test_Lagrangien_Augmente(afficher,Lagrangien_Augmente::Function)
 
 			#résolution du problème avec le Lagrangien augmenté
 			xmin1,fxmin1,flag,nbiters = Lagrangien_Augmente(algo,fct1,contrainte1,grad_fct1,hess_fct1,grad_contrainte1,
-			hess_contrainte1,phi,x01,options)
+			hess_contrainte1,phi,pts2.x01,options)
 
 			#affichage des résultats du test
 			if (afficher)
-				afficher_resultats(algo,"fonction 1","x01",xmin1,fxmin1,flag,sol_exacte_fct1,nbiters)
+				afficher_resultats(algo,"fonction 1","x01",xmin1,fxmin1,flag,sol_fct1_augm,nbiters)
 			end
 
 			# Test sur fct1 avec x02 comme solution initiale
 
 			#résolution du problème avec le Lagrangien augmenté
 			xmin2 ,fxmin2,flag,nbiters = Lagrangien_Augmente(algo,fct1,contrainte1,grad_fct1,hess_fct1,grad_contrainte1,
-			hess_contrainte1,phi,x02,[])
+			hess_contrainte1,phi,pts2.x02,[])
 
 			#affichage des résultats du test
 			if (afficher)
-				afficher_resultats(algo,"fonction 1","x02",xmin2,fxmin2,flag,sol_exacte_fct1,nbiters)
+				afficher_resultats(algo,"fonction 1","x02",xmin2,fxmin2,flag,sol_fct1_augm,nbiters)
 			end
 
 
@@ -119,12 +112,12 @@ function test_Lagrangien_Augmente(afficher,Lagrangien_Augmente::Function)
 
 			#résolution du problème avec le Lagrangien augmenté
 			xmin3,fxmin3,flag,nbiters = Lagrangien_Augmente(algo,fct2,contrainte2,grad_fct2,hess_fct2,grad_contrainte2,
-			hess_contrainte2,phi,x03,[])
+			hess_contrainte2,phi,pts2.x03,[])
 
 
 			#affichage des résultats du test
 			if (afficher)
-				afficher_resultats(algo,"fonction 2","x03",xmin3,fxmin3,flag,sol_exacte_fct2,nbiters)
+				afficher_resultats(algo,"fonction 2","x03",xmin3,fxmin3,flag,sol_fct2_augm,nbiters)
 			end
 
 
@@ -132,11 +125,11 @@ function test_Lagrangien_Augmente(afficher,Lagrangien_Augmente::Function)
 
 			#résolution du problème avec le Lagrangien augmenté
 			xmin4 ,fxmin4,flag,nbiters = Lagrangien_Augmente(algo,fct2,contrainte2,grad_fct2,hess_fct2,grad_contrainte2,
-			hess_contrainte2,phi,x04,[])
+			hess_contrainte2,phi,pts2.x04,[])
 
 			#affichage des résultats du test
 			if (afficher)
-				afficher_resultats(algo,"fonction 2","x04",xmin4,fxmin4,flag,sol_exacte_fct2,nbiters)
+				afficher_resultats(algo,"fonction 2","x04",xmin4,fxmin4,flag,sol_fct2_augm,nbiters)
 			end
 
 
@@ -146,10 +139,10 @@ function test_Lagrangien_Augmente(afficher,Lagrangien_Augmente::Function)
 
 			try
 				res = @testset "$nom_algo"  begin
-		          	 	@test isapprox(xmin1,sol_exacte_fct1 ,atol=normerreur)
-		          	 	@test xmin2 ≈ sol_exacte_fct1 atol=normerreur
-		           	 	@test xmin3 ≈ sol_exacte_fct2 atol=normerreur
-		           	 	@test xmin4 ≈ sol_exacte_fct2 atol=normerreur
+		          	 	@test isapprox(xmin1,sol_fct1_augm ,atol=normerreur)
+		          	 	@test xmin2 ≈ sol_fct1_augm atol=normerreur
+		           	 	@test xmin3 ≈ sol_fct2_augm atol=normerreur
+		           	 	@test xmin4 ≈ sol_fct2_augm atol=normerreur
 		           	 end
 			catch
 				println("\n")
