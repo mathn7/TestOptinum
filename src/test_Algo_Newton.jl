@@ -31,27 +31,27 @@ function test_Algo_Newton(affichage,Algorithme_De_Newton::Function)
 	normerreur = 1e-2
 
 
-	x_min11, fx_min, flag, nb_iters = Algorithme_De_Newton(fct1,grad_fct1,hess_fct1,x011,option,0)
+	x_min11, fx_min, flag, nb_iters = Algorithme_De_Newton(fct1,grad_fct1,hess_fct1,x011,option)
 	if (affichage)
 		afficher_resultats("fct1","x011",x_min11,fx_min,flag,sol_exacte_fct1,nb_iters)
 	end
 
 
-	x_min12, fx_min, flag, nb_iters = Algorithme_De_Newton(fct1,grad_fct1,hess_fct1,x012,[],0)
+	x_min12, fx_min, flag, nb_iters = Algorithme_De_Newton(fct1,grad_fct1,hess_fct1,x012,[])
 
 	if (affichage)
 		afficher_resultats("fct1","x012",x_min12,fx_min,flag,sol_exacte_fct1,nb_iters)
 	end
 
 
-	x_min21, fx_min, flag, nb_iters = Algorithme_De_Newton(fct2,grad_fct2,hess_fct2,x021,[],0)
+	x_min21, fx_min, flag, nb_iters = Algorithme_De_Newton(fct2,grad_fct2,hess_fct2,x021,[])
 
 	if (affichage)
 		afficher_resultats("fct2","x021",x_min21,fx_min,flag,sol_exacte_fct2,nb_iters)
 	end
 
 
-	x_min22, fx_min, flag, nb_iters = Algorithme_De_Newton(fct2,grad_fct2,hess_fct2,x022,[],0)
+	x_min22, fx_min, flag, nb_iters = Algorithme_De_Newton(fct2,grad_fct2,hess_fct2,x022,[])
 
 
 	if (affichage)
