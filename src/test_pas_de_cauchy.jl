@@ -1,5 +1,5 @@
 using LinearAlgebra, Test
-
+include("fonctions_de_tests.jl")
 
 "#test de l'algorithme de pas de cauchy :
  #on test : la saturation/non satiration de la boule et la nullité du gradient"

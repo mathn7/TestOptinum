@@ -12,4 +12,5 @@ export test_regions_de_confiance
 include("test_Lagrangien_Augmente.jl")
 export test_Lagrangien_Augmente
 
+
 end # module

@@ -1,5 +1,5 @@
 using LinearAlgebra, Test
-
+include("fonctions_de_tests.jl")
 
 "#afficher_resultats affiche les sorties de l'algorithme des Régions de confiance"
 function afficher_resultats(algo,nom_fct,point_init,xmin,fxmin,flag,sol_exacte,nbiters)

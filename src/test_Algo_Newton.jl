@@ -1,4 +1,5 @@
 using LinearAlgebra, Test
+include("fonctions_de_tests.jl")
 
 "#test de l'algorithme de newton"
 
