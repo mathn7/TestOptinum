@@ -64,7 +64,7 @@ function test_Lagrangien_Augmente(afficher,Lagrangien_Augmente::Function)
 
 			#résolution du problème avec le Lagrangien augmenté
 			xmin1,fxmin1,flag,nbiters = Lagrangien_Augmente(algo,fct1,contrainte1,grad_fct1,hess_fct1,grad_contrainte1,
-			hess_contrainte1,phi,pts2.x01,options)
+			hess_contrainte1,pts2.x01,options)
 
 			#affichage des résultats du test
 			if (afficher)
@@ -75,7 +75,7 @@ function test_Lagrangien_Augmente(afficher,Lagrangien_Augmente::Function)
 
 			#résolution du problème avec le Lagrangien augmenté
 			xmin2 ,fxmin2,flag,nbiters = Lagrangien_Augmente(algo,fct1,contrainte1,grad_fct1,hess_fct1,grad_contrainte1,
-			hess_contrainte1,phi,pts2.x02,[])
+			hess_contrainte1,pts2.x02,[])
 
 			#affichage des résultats du test
 			if (afficher)
