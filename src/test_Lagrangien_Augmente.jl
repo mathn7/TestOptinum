@@ -32,7 +32,7 @@ function test_Lagrangien_Augmente(afficher,Lagrangien_Augmente::Function)
 	epsilon = 1e-8
 	tol = 1e-5
 	itermax = 1000
-	options = [epsilon,tol,itermax,lambda0,1,tho]
+	options = [epsilon,tol,itermax,lambda0,mu0,tho]
 
 	"#ensemble d'algorithmes d'optimisation sans contraintes"
 	algos = ["newton","gct","cauchy"]
