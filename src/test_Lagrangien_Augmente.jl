@@ -32,7 +32,7 @@ function test_Lagrangien_Augmente(afficher,Lagrangien_Augmente::Function)
 	epsilon = 1e-8
 	tol = 1e-5
 	itermax = 1000
-	options = [epsilon,tol,itermax,lambda0,mu0,tho]
+	options = [epsilon,tol,itermax,lambda0,1,tho]
 
 	"#ensemble d'algorithmes d'optimisation sans contraintes"
 	algos = ["newton","gct","cauchy"]
@@ -71,7 +71,7 @@ function test_Lagrangien_Augmente(afficher,Lagrangien_Augmente::Function)
 
 			#résolution du problème avec le Lagrangien augmenté
 			xmin1,fxmin1,flag,nbiters = Lagrangien_Augmente(algo,fct1,contrainte1,grad_fct1,hess_fct1,grad_contrainte1,
-			hess_contrainte1,phi,x01,[])
+			hess_contrainte1,phi,x01,options)
 
 			#affichage des résultats du test
 			if (afficher)
