@@ -67,6 +67,3 @@ hess_contrainte1(x) = [0 0 0;0 0 0;0 0 0]
 contrainte2(x) =  (x[1]^2) + (x[2]^2) -1.5
 grad_contrainte2(x) = [2*x[1] ;2*x[2]]
 hess_contrainte2(x) = [2 0;0 2]
-
-#fonction utilisé dans le calcul de la hessienne du Lagrangien
-phi(x) =  zeros(length(x),length(x))
