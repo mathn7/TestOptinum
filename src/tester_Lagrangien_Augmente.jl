@@ -1,26 +1,14 @@
 using LinearAlgebra, Test
 
-"#afficher_resultats nous affiche les sorties du lagrangien augmenté"
-function afficher_resultats(algo,nom_fct,point_init,xmin,fxmin,flag,sol_exacte,nbiters)
-	println("-------------------------------------------------------------------------")
-	printstyled("Résultats de l'algorithme du Lagrangien augmenté avec ",algo," appliquée à "*nom_fct*" et au point initial "*point_init*" :\n",bold=true,color=:blue)
-	println("  * solution trouvée (xsol) = ",xmin)
-	println("  * f(xsol) = ",fxmin)
-	println("  * nombre d'itération = ",nbiters)
-	println("  * flag = ",flag)
-	println("  * solution attendue : " , sol_exacte)
-end
-
-
-"#test du lagrangien augmenté"
-
 """
-   #Entrées :
-	#afficher : boolean , si true on affiche les sorties de chaque test
+Tester l'algorithme du Lagrangien augmenté
+
+#Entrées :
+   * affichage : (Bool) affichage ou non des résultats de chaque test
 
 """
 
-function test_Lagrangien_Augmente(afficher,Lagrangien_Augmente::Function)
+function tester_Lagrangien_Augmente(afficher,Lagrangien_Augmente::Function)
 
 	"#initialisation des paramétres"
 	lambda0 = 2
@@ -37,14 +25,20 @@ function test_Lagrangien_Augmente(afficher,Lagrangien_Augmente::Function)
 	algos = ["newton","gct","cauchy"]
 
 	"#norme de l'écart entre la solution trouvée et celle attendue"
-	normerreur = 1e-4
+	tol_erreur = 1e-4
 
 
 	for algo in algos
 
 			"# Test sur fct1 avec x01 comme solution initiale"
-			"#résolution du problème avec la libraire JumP"
+			"#résolution du problème avec la libraire JuMP"
 			#=
+			import Pkg
+			Pkg.add("JuMP") # à exécuter une seule fois
+			Pkg.add("Ipopt") # à exécuter une seule fois
+			using JuMP
+			using Ipopt
+			
 			#création du model
 			m = Model(Ipopt.Optimizer)
 			#définir les paramétres du model (faites attention à la dimension de x !)
@@ -68,7 +62,7 @@ function test_Lagrangien_Augmente(afficher,Lagrangien_Augmente::Function)
 
 			#affichage des résultats du test
 			if (afficher)
-				afficher_resultats(algo,"fonction 1","x01",xmin1,fxmin1,flag,sol_fct1_augm,nbiters)
+				afficher_resultats("Lagrangien augmenté avec "*algo,"fonction 1","x01",xmin1,fxmin1,flag,sol_fct1_augm,nbiters)
 			end
 
 			# Test sur fct1 avec x02 comme solution initiale
@@ -79,7 +73,7 @@ function test_Lagrangien_Augmente(afficher,Lagrangien_Augmente::Function)
 
 			#affichage des résultats du test
 			if (afficher)
-				afficher_resultats(algo,"fonction 1","x02",xmin2,fxmin2,flag,sol_fct1_augm,nbiters)
+				afficher_resultats("Lagrangien augmenté avec "*algo,"fonction 1","x02",xmin2,fxmin2,flag,sol_fct1_augm,nbiters)
 			end
 
 
@@ -117,7 +111,7 @@ function test_Lagrangien_Augmente(afficher,Lagrangien_Augmente::Function)
 
 			#affichage des résultats du test
 			if (afficher)
-				afficher_resultats(algo,"fonction 2","x03",xmin3,fxmin3,flag,sol_fct2_augm,nbiters)
+				afficher_resultats("Lagrangien augmenté avec "*algo,"fonction 2","x03",xmin3,fxmin3,flag,sol_fct2_augm,nbiters)
 			end
 
 
@@ -129,7 +123,7 @@ function test_Lagrangien_Augmente(afficher,Lagrangien_Augmente::Function)
 
 			#affichage des résultats du test
 			if (afficher)
-				afficher_resultats(algo,"fonction 2","x04",xmin4,fxmin4,flag,sol_fct2_augm,nbiters)
+				afficher_resultats("Lagrangien augmenté avec "*algo,"fonction 2","x04",xmin4,fxmin4,flag,sol_fct2_augm,nbiters)
 			end
 
 
@@ -139,10 +133,10 @@ function test_Lagrangien_Augmente(afficher,Lagrangien_Augmente::Function)
 
 			try
 				res = @testset "$nom_algo"  begin
-		          	 	@test isapprox(xmin1,sol_fct1_augm ,atol=normerreur)
-		          	 	@test xmin2 ≈ sol_fct1_augm atol=normerreur
-		           	 	@test xmin3 ≈ sol_fct2_augm atol=normerreur
-		           	 	@test xmin4 ≈ sol_fct2_augm atol=normerreur
+		          	 	@test isapprox(xmin1,sol_fct1_augm ,atol=tol_erreur)
+		          	 	@test xmin2 ≈ sol_fct1_augm atol=tol_erreur
+		           	 	@test xmin3 ≈ sol_fct2_augm atol=tol_erreur
+		           	 	@test xmin4 ≈ sol_fct2_augm atol=tol_erreur
 		           	 end
 			catch
 				println("\n")

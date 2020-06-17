@@ -58,12 +58,24 @@ hess_fct2(x)=[-400*(x[2]-3*x[1]^2)+2  -400*x[1];-400*x[1]  200]
 sol_fct1_augm = [0.5 ; 1.25 ; 0.5]
 sol_fct2_augm = [0.9072339605110892; 0.82275545631455]
 
-#contrainte : x1 + x3 = 1
+# contrainte : x1 + x3 = 1
 contrainte1(x) =  x[1]+x[3]-1
 grad_contrainte1(x) = [1 ;0; 1]
 hess_contrainte1(x) = [0 0 0;0 0 0;0 0 0]
 
-#contrainte : x1^{2} + x2^{2} = 1.5 (x appartient au cercle de centre (0,0) et de rayon sqrt(1.5))
+# contrainte : x1^{2} + x2^{2} = 1.5 (x appartient au cercle de centre (0,0) et de rayon sqrt(1.5))
 contrainte2(x) =  (x[1]^2) + (x[2]^2) -1.5
 grad_contrainte2(x) = [2*x[1] ;2*x[2]]
 hess_contrainte2(x) = [2 0;0 2]
+
+
+# Affichage les sorties de l'algorithme des Régions de confiance
+function afficher_resultats(algo,nom_fct,point_init,xmin,fxmin,flag,sol_exacte,nbiters)
+	println("-------------------------------------------------------------------------")
+	printstyled("Résultats de : "*algo*" appliqué à "*nom_fct*" au point initial "*point_init*" :\n",bold=true,color=:blue)
+	println("  * xsol = ",xmin)
+	println("  * f(xsol) = ",fxmin)
+	println("  * nb_iters = ",nbiters)
+	println("  * flag = ",flag)
+	println("  * sol_exacte : ", sol_exacte)
+end

@@ -1,17 +1,16 @@
 using LinearAlgebra, Test
 
-"#test de l'algorithme de pas de cauchy :
- #on test : la saturation/non satiration de la boule et la nullité du gradient"
-
 """
-   #Entrées :
-	#affichage : boolean , si true on affiche les sorties de chaque test
+Tester l'algorithme de pas de Cauchy 
+
+#Entrées :
+   * affichage : (Bool) affichage ou non des résultats de chaque test
 	
 """
 
-function test_pas_de_cauchy(affichage,Pas_De_Cauchy::Function)
+function tester_pas_de_cauchy(affichage,Pas_De_Cauchy::Function)
 
-	normerreur = 1e-6
+	tol_erreur = 1e-6
 	sol_exacte_q1 = [0, 0]
 	sol_exacte_q2 = [-0.9230769230769234, -0.30769230769230776]
 	sol_exacte_q3 = [5.000000000000001, -2.5000000000000004]
@@ -35,11 +34,9 @@ function test_pas_de_cauchy(affichage,Pas_De_Cauchy::Function)
 	s3, e3 = Pas_De_Cauchy(g3,H3,delta3)
 
 	res = @testset "Pas de Cauchy" begin 
-		   @test e1 == 0 && s1 ≈ sol_exacte_q1 atol=normerreur
-		   @test e2 == 1 && s2 ≈ sol_exacte_q2 atol=normerreur
-		   @test e3 == 1 && s3 ≈ sol_exacte_q3 atol=normerreur
-		   
-		  
+		@test e1 == 0 && (s1 ≈ sol_exacte_q1 atol=tol_erreur)
+		@test e2 == 1 && (s2 ≈ sol_exacte_q2 atol=tol_erreur)
+		@test e3 == 1 && (s3 ≈ sol_exacte_q3 atol=tol_erreur)		  
 	end
 	println("\n")
 

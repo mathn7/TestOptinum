@@ -7,18 +7,22 @@ export sol_exacte_fct1,fct1,grad_fct1,hess_fct1
 export sol_exacte_fct2,fct2,grad_fct2,hess_fct2
 export sol_fct1_augm,contrainte1,grad_contrainte1,hess_contrainte1
 export sol_fct2_augm,contrainte2,grad_contrainte2,hess_contrainte2
+export afficher_resultats
 
-include("test_Algo_Newton.jl")
-export test_Algo_Newton
+include("tester_Algo_Newton.jl")
+export tester_Algo_Newton
 
 include("test_pas_de_cauchy.jl")
-export test_pas_de_cauchy
+export tester_pas_de_cauchy
 
-include("test_regions_de_confiance.jl")
-export test_regions_de_confiance
+include("tester_gct")
+export tester_gct
 
-include("test_Lagrangien_Augmente.jl")
-export test_Lagrangien_Augmente
+include("tester_regions_de_confiance.jl")
+export tester_regions_de_confiance
+
+include("tester_Lagrangien_Augmente.jl")
+export tester_Lagrangien_Augmente
 
 
 
