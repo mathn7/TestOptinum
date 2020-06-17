@@ -1,4 +1,4 @@
-using LinearAlgebra, Test
+using Test
 
 """
 Tester l'algorithme de pas de Cauchy 
@@ -11,9 +11,9 @@ Tester l'algorithme de pas de Cauchy
 function tester_pas_de_cauchy(affichage,Pas_De_Cauchy::Function)
 
 	tol_erreur = 1e-6
-	sol_exacte_q1 = [0, 0]
-	sol_exacte_q2 = [-0.9230769230769234, -0.30769230769230776]
-	sol_exacte_q3 = [5.000000000000001, -2.5000000000000004]
+	sol_exacte_q1 = [0; 0]
+	sol_exacte_q2 = [-0.9230769230769234; -0.30769230769230776]
+	sol_exacte_q3 = [5.000000000000001; -2.5000000000000004]
 	
 	"# Pour la quadratique 1"
 	g1 = [0; 0]

@@ -1,4 +1,4 @@
-using LinearAlgebra, Test
+using Test
 
 """
 Tester l'algorithme des régions de confiance
@@ -27,7 +27,7 @@ function tester_regions_de_confiance(afficher,Regions_De_Confiance::Function)
 	options2 =[deltaMax,gamma1,gamma2,eta1,eta2,delta0_2,maxits,tol,eps]
 
 
-	normerreur = 1e-2
+	tol_erreur = 1e-2
 
 	"#test avec la fonction f1 et point initial x011"
 	RC_x_min11, RC_fmin11, RC_flag11, RC_nb_iters11 = Regions_De_Confiance("cauchy",fct1,grad_fct1,hess_fct1,pts1.x011,options1)
@@ -94,19 +94,19 @@ function tester_regions_de_confiance(afficher,Regions_De_Confiance::Function)
 	"#tester les résultats obtenues"
 	res = @testset "La méthode des régions de confiance " begin 
 		res = @testset "régions de confiance avec le pas de cauchy " begin 
-		   @test isapprox(RC_x_min11,sol_exacte_fct1 ,atol=normerreur)
-		   @test RC_x_min12 ≈ sol_exacte_fct1 atol=normerreur
-		   @test RC_x_min21 ≈ sol_exacte_fct2 atol=normerreur
-		   @test RC_x_min22 ≈ sol_exacte_fct2 atol=normerreur
-		   @test RC_x_min23 ≈ sol_exacte_fct2 atol=normerreur
+		   @test isapprox(RC_x_min11,sol_exacte_fct1 ,atol=tol_erreur)
+		   @test RC_x_min12 ≈ sol_exacte_fct1 atol=tol_erreur
+		   @test RC_x_min21 ≈ sol_exacte_fct2 atol=tol_erreur
+		   @test RC_x_min22 ≈ sol_exacte_fct2 atol=tol_erreur
+		   @test RC_x_min23 ≈ sol_exacte_fct2 atol=tol_erreur
 		end
 
 		res = @testset "régions de confiance avec le gradient conjugué tronqué " begin 
-		   @test isapprox(gct_x_min11,sol_exacte_fct1 ,atol=normerreur)
-		   @test gct_x_min12 ≈ sol_exacte_fct1 atol=normerreur
-		   @test gct_x_min21 ≈ sol_exacte_fct2 atol=normerreur
-		   @test gct_x_min22 ≈ sol_exacte_fct2 atol=normerreur
-		   @test gct_x_min23 ≈ sol_exacte_fct2 atol=normerreur
+		   @test isapprox(gct_x_min11,sol_exacte_fct1 ,atol=tol_erreur)
+		   @test gct_x_min12 ≈ sol_exacte_fct1 atol=tol_erreur
+		   @test gct_x_min21 ≈ sol_exacte_fct2 atol=tol_erreur
+		   @test gct_x_min22 ≈ sol_exacte_fct2 atol=tol_erreur
+		   @test gct_x_min23 ≈ sol_exacte_fct2 atol=tol_erreur
 		end
 		
 	end

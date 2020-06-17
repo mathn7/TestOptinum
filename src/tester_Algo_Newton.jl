@@ -1,4 +1,4 @@
-using LinearAlgebra, Test
+using Test
 
 """
 Tester l'algorithme de Newton local

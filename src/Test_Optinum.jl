@@ -1,5 +1,7 @@
 module Test_Optinum
 
+using Test
+
 ## ajouter les fonctions de test
 include("fonctions_de_tests.jl")
 export pts1,pts2
@@ -12,7 +14,7 @@ export afficher_resultats
 include("tester_Algo_Newton.jl")
 export tester_Algo_Newton
 
-include("test_pas_de_cauchy.jl")
+include("tester_pas_de_cauchy.jl")
 export tester_pas_de_cauchy
 
 include("tester_gct")
