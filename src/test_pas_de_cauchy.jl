@@ -11,6 +11,11 @@ using LinearAlgebra, Test
 
 function test_pas_de_cauchy(affichage,Pas_De_Cauchy::Function)
 
+	normerreur = 1e-6
+	sol_exacte_q1 = [0, 0]
+	sol_exacte_q2 = [-0.9230769230769234, -0.30769230769230776]
+	sol_exacte_q3 = [5.000000000000001, -2.5000000000000004]
+	
 	"# Pour la quadratique 1"
 	g1 = [0; 0]
 	H1 = [7 0 ; 0 2]
@@ -33,6 +38,10 @@ function test_pas_de_cauchy(affichage,Pas_De_Cauchy::Function)
 		   @test e1 == 0
 		   @test e2 == 1
 		   @test e3 == 1
+		   @test s1 ≈ sol_exacte_q1 atol=normerreur
+           	   @test s2 ≈ sol_exacte_q2 atol=normerreur
+                   @test s3 ≈ sol_exacte_q3 atol=normerreur
+		  
 	end
 	println("\n")
 
