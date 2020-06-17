@@ -34,9 +34,9 @@ function tester_pas_de_cauchy(affichage,Pas_De_Cauchy::Function)
 	s3, e3 = Pas_De_Cauchy(g3,H3,delta3)
 
 	res = @testset "Pas de Cauchy" begin 
-		@test e1 == 0 && (s1 ≈ sol_exacte_q1 atol=tol_erreur)
-		@test e2 == 1 && (s2 ≈ sol_exacte_q2 atol=tol_erreur)
-		@test e3 == 1 && (s3 ≈ sol_exacte_q3 atol=tol_erreur)		  
+		@test (e1 == 0) && (isapprox(s1,sol_exacte_q1,atol=tol_erreur))
+		@test (e2 == 0) && (isapprox(s2,sol_exacte_q2,atol=tol_erreur))
+		@test (e3 == 0) && (isapprox(s3,sol_exacte_q3,atol=tol_erreur))		  
 	end
 	println("\n")
 
