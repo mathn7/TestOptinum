@@ -17,7 +17,7 @@ export tester_Algo_Newton
 include("tester_pas_de_cauchy.jl")
 export tester_pas_de_cauchy
 
-include("tester_gct")
+include("tester_gct.jl")
 export tester_gct
 
 include("tester_regions_de_confiance.jl")
