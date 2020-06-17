@@ -24,17 +24,17 @@ function tester_Algo_Newton(affichage,Algorithme_De_Newton::Function)
 		afficher_resultats("algorithme de Newton ","fct1","x011",x_min11,fx_min,flag,sol_exacte_fct1,nb_iters)
 	end
 
-	x_min12, fx_min, flag, nb_iters = Algorithme_De_Newton(fct1,grad_fct1,hess_fct1,pts1.x012,[])
+	x_min12, fx_min, flag, nb_iters = Algorithme_De_Newton(fct1,grad_fct1,hess_fct1,pts1.x012,options)
 	if (affichage)
 		afficher_resultats("algorithme de Newton ","fct1","x012",x_min12,fx_min,flag,sol_exacte_fct1,nb_iters)
 	end
 
-	x_min21, fx_min, flag, nb_iters = Algorithme_De_Newton(fct2,grad_fct2,hess_fct2,pts1.x021,[])
+	x_min21, fx_min, flag, nb_iters = Algorithme_De_Newton(fct2,grad_fct2,hess_fct2,pts1.x021,options)
 	if (affichage)
 		afficher_resultats("algorithme de Newton ","fct2","x021",x_min21,fx_min,flag,sol_exacte_fct2,nb_iters)
 	end
 
-	x_min22, fx_min, flag, nb_iters = Algorithme_De_Newton(fct2,grad_fct2,hess_fct2,pts1.x022,[])
+	x_min22, fx_min, flag, nb_iters = Algorithme_De_Newton(fct2,grad_fct2,hess_fct2,pts1.x022,options)
 	if (affichage)
 		afficher_resultats("algorithme de Newton ","fct2","x022",x_min22,fx_min,flag,sol_exacte_fct2,nb_iters)
 		println("\n")
