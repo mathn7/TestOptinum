@@ -1,5 +1,5 @@
 
-""" # Les points initiaux """
+""" Les points initiaux """
 #pour les problèmes sans contraintes
 struct Pts_sans_contraintes
     x011
@@ -13,7 +13,7 @@ x012 = [10; 3; -2.2]
 x021 = [-1.2; 1]
 x022 = [10; 0]
 x023 = [0; 1/200 + 1/10^12]
-
+# les points initiaux utilisés dans les problèmes sans contraintes
 pts1 = Pts_sans_contraintes(x011,x012,x021,x022,x023)
 
 # pour les problèmes avec contraintes
@@ -67,7 +67,6 @@ hess_contrainte1(x) = [0 0 0;0 0 0;0 0 0]
 contrainte2(x) =  (x[1]^2) + (x[2]^2) -1.5
 grad_contrainte2(x) = [2*x[1] ;2*x[2]]
 hess_contrainte2(x) = [2 0;0 2]
-
 
 # Affichage les sorties de l'algorithme des Régions de confiance
 function afficher_resultats(algo,nom_fct,point_init,xmin,fxmin,flag,sol_exacte,nbiters)

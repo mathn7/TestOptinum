@@ -26,6 +26,4 @@ export tester_regions_de_confiance
 include("tester_Lagrangien_Augmente.jl")
 export tester_Lagrangien_Augmente
 
-
-
 end # module

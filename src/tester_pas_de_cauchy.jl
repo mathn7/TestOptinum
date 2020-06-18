@@ -3,11 +3,14 @@ using Test
 """
 Tester l'algorithme de pas de Cauchy 
 
-#Entrées :
+# Entrées :
    * affichage : (Bool) affichage ou non des résultats de chaque test
-	
+   
+# Les cas de test (dans l'ordre)
+   * quadratique 1
+   * quadratique 2
+   * quadratique 3	
 """
-
 function tester_pas_de_cauchy(affichage,Pas_De_Cauchy::Function)
 
 	tol_erreur = 1e-6
