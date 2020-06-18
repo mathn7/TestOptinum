@@ -43,7 +43,7 @@ function tester_gct(affichage,Gradient_Conjugue_Tronque::Function)
     delta = 10  
     s3 = Gradient_Conjugue_Tronque(grad,Hess,[delta;max_iter;tol])
     # le résultat attendu
-    sol_quad3 = [-9.486832980505138 ; -3.162277660168379]
+    sol_quad3 = [9.102342582478453; -4.140937032991381]
 
     # le cas de test 4
     grad = [0 ; 0]
