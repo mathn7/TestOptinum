@@ -65,7 +65,7 @@ function tester_Lagrangien_Augmente(afficher,Lagrangien_Augmente::Function)
 
 		"# tester les résultats"
 		try
-			res = @testset "Lagrangien augmenté avec "*algo  begin
+			res = @testset "Lagrangien augmenté avec $algo"  begin
 					@test isapprox(xmin1,sol_fct1_augm ,atol=tol_erreur)
 					@test xmin2 ≈ sol_fct1_augm atol=tol_erreur
 					@test xmin3 ≈ sol_fct2_augm atol=tol_erreur
