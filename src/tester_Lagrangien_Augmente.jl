@@ -31,7 +31,7 @@ function tester_Lagrangien_Augmente(afficher,Lagrangien_Augmente::Function)
 	tol_erreur = 1e-4
 	
 	"# Les trois algorithmes d'optimisations sans contraintes utlisés"
-	algos = ["Newton","gct","Cauchy"]
+	algos = ["newton","gct","cauchy"]
 
 	for algo in algos
 												
@@ -64,10 +64,8 @@ function tester_Lagrangien_Augmente(afficher,Lagrangien_Augmente::Function)
 		end
 
 		"# tester les résultats"
-		nom_algo = "Lagrangien augmenté avec "*algo
-
 		try
-			res = @testset "$nom_algo"  begin
+			res = @testset "Lagrangien augmenté avec "*algo  begin
 					@test isapprox(xmin1,sol_fct1_augm ,atol=tol_erreur)
 					@test xmin2 ≈ sol_fct1_augm atol=tol_erreur
 					@test xmin3 ≈ sol_fct2_augm atol=tol_erreur
