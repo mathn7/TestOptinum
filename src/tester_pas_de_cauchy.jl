@@ -41,8 +41,5 @@ function tester_pas_de_cauchy(affichage,Pas_De_Cauchy::Function)
 		@test (e2 == 1) && (isapprox(s2,sol_exacte_q2,atol=tol_erreur))
 		@test (e3 == 1) && (isapprox(s3,sol_exacte_q3,atol=tol_erreur))		  
 	end
-	println("\n")
-
 	return 
-
 end
