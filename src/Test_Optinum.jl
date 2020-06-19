@@ -1,6 +1,7 @@
 module Test_Optinum
 
 using Test
+using Markdown
 
 ## ajouter les fonctions de test
 include("fonctions_de_tests.jl")
