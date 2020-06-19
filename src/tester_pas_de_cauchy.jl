@@ -11,11 +11,10 @@ Tester l'algorithme de pas de Cauchy
 """
 function tester_pas_de_cauchy(afficher::Bool,Pas_De_Cauchy::Function)
 	
+    # consommer le stacktrace des tests
 	effacer_stacktrace()
+
 	tol_erreur = 1e-6
-	sol_exacte_q1 = [0; 0]
-	sol_exacte_q2 = 
-	sol_exacte_q3 = 
 					
 	res = @testset "Pas de Cauchy" begin 	 	
 		"# Pour la quadratique 1"

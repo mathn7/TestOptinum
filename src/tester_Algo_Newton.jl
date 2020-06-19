@@ -9,8 +9,10 @@ Tester l'algorithme de Newton local
    * fct 2 : x021,x022
 """
 function tester_Algo_Newton(afficher::Bool,Algorithme_De_Newton::Function)
-
+	
+    # consommer le stacktrace des tests
 	effacer_stacktrace()
+
 	eps = 1e-6
 	max_iters = 50
 	tol = 1e-15
@@ -19,31 +21,31 @@ function tester_Algo_Newton(afficher::Bool,Algorithme_De_Newton::Function)
 
 	res = @testset "L'algorithme de Newton" begin 
 		# le cas de test 1
-		x_min11, fx_min, flag, nb_iters = Algorithme_De_Newton(fct1,grad_fct1,hess_fct1,pts1.x011,options)
+		x_min, fx_min, flag, nb_iters = Algorithme_De_Newton(fct1,grad_fct1,hess_fct1,pts1.x011,options)
 		if (afficher)
-			afficher_resultats("algorithme de Newton ","fct1","x011",x_min11,fx_min,flag,sol_exacte_fct1,nb_iters)
+			afficher_resultats("algorithme de Newton ","fct1","x011",x_min,fx_min,flag,sol_exacte_fct1,nb_iters)
 		end
-		@test isapprox(x_min11, sol_exacte_fct1 ,atol = tol_erreur)
+		@test isapprox(x_min, sol_exacte_fct1 , atol = tol_erreur)
 
 		# le cas de test 2
-		x_min12, fx_min, flag, nb_iters = Algorithme_De_Newton(fct1,grad_fct1,hess_fct1,pts1.x012,options)
+		x_min, fx_min, flag, nb_iters = Algorithme_De_Newton(fct1,grad_fct1,hess_fct1,pts1.x012,options)
 		if (afficher)
-			afficher_resultats("algorithme de Newton ","fct1","x012",x_min12,fx_min,flag,sol_exacte_fct1,nb_iters)
+			afficher_resultats("algorithme de Newton ","fct1","x012",x_min,fx_min,flag,sol_exacte_fct1,nb_iters)
 		end
-		@test x_min12 ≈ sol_exacte_fct1 atol = tol_erreur
+		@test x_min ≈ sol_exacte_fct1  atol = tol_erreur
 
 		# le cas de test 3
-		x_min21, fx_min, flag, nb_iters = Algorithme_De_Newton(fct2,grad_fct2,hess_fct2,pts1.x021,options)
+		x_min, fx_min, flag, nb_iters = Algorithme_De_Newton(fct2,grad_fct2,hess_fct2,pts1.x021,options)
 		if (afficher)
-			afficher_resultats("algorithme de Newton ","fct2","x021",x_min21,fx_min,flag,sol_exacte_fct2,nb_iters)
+			afficher_resultats("algorithme de Newton ","fct2","x021",x_min,fx_min,flag,sol_exacte_fct2,nb_iters)
 		end
-		@test x_min21 ≈ sol_exacte_fct2 atol = tol_erreur
+		@test x_min ≈ sol_exacte_fct2  atol = tol_erreur
 
 		# le cas de test 4
-		x_min22, fx_min, flag, nb_iters = Algorithme_De_Newton(fct2,grad_fct2,hess_fct2,pts1.x022,options)
+		x_min, fx_min, flag, nb_iters = Algorithme_De_Newton(fct2,grad_fct2,hess_fct2,pts1.x022,options)
 		if (afficher)
-			afficher_resultats("algorithme de Newton ","fct2","x022",x_min22,fx_min,flag,sol_exacte_fct2,nb_iters)
+			afficher_resultats("algorithme de Newton ","fct2","x022",x_min,fx_min,flag,sol_exacte_fct2,nb_iters)
 		end
-		@test x_min22 ≈ sol_exacte_fct2 atol = tol_erreur 
+		@test x_min ≈ sol_exacte_fct2  atol = tol_erreur 
 	end
 end
