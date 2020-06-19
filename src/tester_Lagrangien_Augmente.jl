@@ -65,6 +65,7 @@ function tester_Lagrangien_Augmente(afficher::Bool,Lagrangien_Augmente::Function
 					afficher_resultats("Lagrangien augmenté avec "*algo,"fonction 2","x04",xmin,fxmin,flag,sol_fct2_augm,nbiters)
 				end
 				@test xmin ≈ sol_fct2_augm atol=tol_erreur
+			end
 		catch
 		end
 	end
