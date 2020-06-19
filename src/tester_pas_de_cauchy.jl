@@ -1,7 +1,4 @@
-using Test
-
 @doc doc"""
-
 Tester l'algorithme de pas de Cauchy 
 
 # Entrées :

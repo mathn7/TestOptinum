@@ -1,6 +1,4 @@
-using Test
-
-"""
+@doc doc"""
 Tester l'algorithme du gradient conjugué tronqué
 
 # Entrées :

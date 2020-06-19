@@ -1,6 +1,4 @@
-using Test
-
-"""
+@doc doc"""
 Tester l'algorithme du Lagrangien augmenté
 
 # Entrées :
@@ -34,43 +32,39 @@ function tester_Lagrangien_Augmente(afficher::Bool,Lagrangien_Augmente::Function
 	algos = ["newton","gct","cauchy"]
 
 	for algo in algos
-												
-		# le cas de test 1
-		xmin1,fxmin1,flag,nbiters = Lagrangien_Augmente(algo,fct1,contrainte1,grad_fct1,hess_fct1,grad_contrainte1,
-		hess_contrainte1,pts2.x01,options)
-		if (afficher)
-			afficher_resultats("Lagrangien augmenté avec "*algo,"fonction 1","x01",xmin1,fxmin1,flag,sol_fct1_augm,nbiters)
-		end
-
-		# le cas de test 2
-		xmin2 ,fxmin2,flag,nbiters = Lagrangien_Augmente(algo,fct1,contrainte1,grad_fct1,hess_fct1,grad_contrainte1,
-		hess_contrainte1,pts2.x02,options)
-		if (afficher)
-			afficher_resultats("Lagrangien augmenté avec "*algo,"fonction 1","x02",xmin2,fxmin2,flag,sol_fct1_augm,nbiters)
-		end
-
-		# le cas de test 3
-		xmin3,fxmin3,flag,nbiters = Lagrangien_Augmente(algo,fct2,contrainte2,grad_fct2,hess_fct2,grad_contrainte2,
-		hess_contrainte2,pts2.x03,options)
-		if (afficher)
-			afficher_resultats("Lagrangien augmenté avec "*algo,"fonction 2","x03",xmin3,fxmin3,flag,sol_fct2_augm,nbiters)
-		end
-
-		# le cas de test 4
-		xmin4 ,fxmin4,flag,nbiters = Lagrangien_Augmente(algo,fct2,contrainte2,grad_fct2,hess_fct2,grad_contrainte2,
-		hess_contrainte2,pts2.x04,options)
-		if (afficher)
-			afficher_resultats("Lagrangien augmenté avec "*algo,"fonction 2","x04",xmin4,fxmin4,flag,sol_fct2_augm,nbiters)
-		end
-
-		"# tester les résultats"
 		try
-			res = @testset "Lagrangien augmenté avec $algo"  begin
-				@test isapprox(xmin1,sol_fct1_augm ,atol=tol_erreur)
-				@test xmin2 ≈ sol_fct1_augm atol=tol_erreur
-				@test xmin3 ≈ sol_fct2_augm atol=tol_erreur
-				@test xmin4 ≈ sol_fct2_augm atol=tol_erreur
-			end
+			res = @testset "Lagrangien augmenté avec $algo"  begin									
+				# le cas de test 1
+				xmin,fxmin,flag,nbiters = Lagrangien_Augmente(algo,fct1,contrainte1,grad_fct1,hess_fct1,grad_contrainte1,
+				hess_contrainte1,pts2.x01,options)
+				if (afficher)
+					afficher_resultats("Lagrangien augmenté avec "*algo,"fonction 1","x01",xmin,fxmin,flag,sol_fct1_augm,nbiters)
+				end
+				@test isapprox(xmin,sol_fct1_augm ,atol=tol_erreur)
+
+				# le cas de test 2
+				xmin ,fxmin,flag,nbiters = Lagrangien_Augmente(algo,fct1,contrainte1,grad_fct1,hess_fct1,grad_contrainte1,
+				hess_contrainte1,pts2.x02,options)
+				if (afficher)
+					afficher_resultats("Lagrangien augmenté avec "*algo,"fonction 1","x02",xmin,fxmin,flag,sol_fct1_augm,nbiters)
+				end
+				@test xmin ≈ sol_fct1_augm atol=tol_erreur
+
+				# le cas de test 3
+				xmin,fxmin,flag,nbiters = Lagrangien_Augmente(algo,fct2,contrainte2,grad_fct2,hess_fct2,grad_contrainte2,
+				hess_contrainte2,pts2.x03,options)
+				if (afficher)
+					afficher_resultats("Lagrangien augmenté avec "*algo,"fonction 2","x03",xmin,fxmin,flag,sol_fct2_augm,nbiters)
+				end
+				@test xmin ≈ sol_fct2_augm atol=tol_erreur
+
+				# le cas de test 4
+				xmin ,fxmin,flag,nbiters = Lagrangien_Augmente(algo,fct2,contrainte2,grad_fct2,hess_fct2,grad_contrainte2,
+				hess_contrainte2,pts2.x04,options)
+				if (afficher)
+					afficher_resultats("Lagrangien augmenté avec "*algo,"fonction 2","x04",xmin,fxmin,flag,sol_fct2_augm,nbiters)
+				end
+				@test xmin ≈ sol_fct2_augm atol=tol_erreur
 		catch
 		end
 	end

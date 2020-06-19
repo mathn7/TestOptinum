@@ -1,6 +1,4 @@
-using Test
-
-"""
+@doc doc"""
 Tester l'algorithme des régions de confiance
 
 # Entrées :

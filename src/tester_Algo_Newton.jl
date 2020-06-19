@@ -1,5 +1,3 @@
-using Test
-
 @doc doc"""
 Tester l'algorithme de Newton local
 
