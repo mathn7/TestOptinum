@@ -11,7 +11,7 @@ Tester l'algorithme de Newton local
 function tester_Algo_Newton(afficher::Bool,Algorithme_De_Newton::Function)
 	
     # consommer le stacktrace des tests
-	effacer_stacktrace()
+	#effacer_stacktrace()
 
 	eps = 1e-6
 	max_iters = 50

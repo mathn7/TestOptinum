@@ -15,7 +15,7 @@ Tester l'algorithme des régions de confiance
 function tester_regions_de_confiance(afficher::Bool,Regions_De_Confiance::Function)
 	
     # consommer le stacktrace des tests
-	effacer_stacktrace()
+	#effacer_stacktrace()
 
 	# La tolérance utilisée dans les tests
 	tol_erreur = 1e-2

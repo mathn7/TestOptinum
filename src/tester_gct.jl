@@ -15,7 +15,7 @@ Tester l'algorithme du gradient conjugué tronqué
 function tester_gct(afficher::Bool,Gradient_Conjugue_Tronque::Function)
    
     # consommer le stacktrace des tests    
-    effacer_stacktrace()
+    #effacer_stacktrace()
     
     tol = 1e-7
     max_iter = 100
