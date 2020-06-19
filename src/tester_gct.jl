@@ -14,6 +14,7 @@ Tester l'algorithme du gradient conjugué tronqué
 """
 function tester_gct(afficher::Bool,Gradient_Conjugue_Tronque::Function)
 
+    effacer_stacktrace()
     tol = 1e-7
     max_iter = 100
     # Tolérance utilisé dans les tests

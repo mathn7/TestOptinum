@@ -10,6 +10,7 @@ Tester l'algorithme de Newton local
 """
 function tester_Algo_Newton(afficher::Bool,Algorithme_De_Newton::Function)
 
+	effacer_stacktrace()
 	eps = 1e-6
 	max_iters = 50
 	tol = 1e-15

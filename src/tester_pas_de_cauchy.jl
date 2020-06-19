@@ -10,7 +10,8 @@ Tester l'algorithme de pas de Cauchy
    * quadratique 3	
 """
 function tester_pas_de_cauchy(afficher::Bool,Pas_De_Cauchy::Function)
-
+	
+	effacer_stacktrace()
 	tol_erreur = 1e-6
 	sol_exacte_q1 = [0; 0]
 	sol_exacte_q2 = 
