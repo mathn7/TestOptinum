@@ -18,7 +18,7 @@ Tester l'algorithme du Lagrangien augmenté
 function tester_Lagrangien_Augmente(afficher::Bool,Lagrangien_Augmente::Function)
 
     # consommer le stacktrace des tests
-	#effacer_stacktrace()
+	#cacher_stacktrace()
 
 	# initialisation des paramètres
 	lambda0 = 2

@@ -12,7 +12,7 @@ Tester l'algorithme de pas de Cauchy
 function tester_pas_de_cauchy(afficher::Bool,Pas_De_Cauchy::Function)
 	
     # consommer le stacktrace des tests
-	#effacer_stacktrace()
+	#cacher_stacktrace()
 
 	tol_erreur = 1e-6
 					

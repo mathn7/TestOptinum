@@ -1,4 +1,4 @@
-module Test_Optinum
+module TestOptinum
 
 using Test
 using Markdown

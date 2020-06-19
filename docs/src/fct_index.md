@@ -7,6 +7,6 @@ Pages = ["fct_index.md"]
 ```
 
 ```@autodocs
-Modules = [Test_Optinum]
+Modules = [TestOptinum]
 Order   = [:function, :type]
 ```
