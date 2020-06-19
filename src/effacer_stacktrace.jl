@@ -1,6 +1,7 @@
 using Test
 
-Test.eval(quote
+function effacer_stacktrace()
+    Test.eval(quote
        function record(ts::DefaultTestSet, t::Union{Fail, Error})
            if myid() == 1
                printstyled(ts.description, ": ", color=:white)
@@ -17,3 +18,4 @@ Test.eval(quote
            t, isa(t, Error) || backtrace()
        end
        end)
+end
