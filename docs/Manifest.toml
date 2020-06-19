@@ -87,9 +87,7 @@ uuid = "8dfed614-e22c-5e08-85e1-65c5234f0b40"
 
 [[Test_Optinum]]
 deps = ["Markdown", "Test"]
-git-tree-sha1 = "1f0b0811d57e54520ee5d3e8106690767397555f"
-repo-rev = "master"
-repo-url = "https://github.com/mathn7/Test_Optinum.git"
+path = "/home/relmo/Bureau/2A/Stage/Optinum-src/Test_Optinum"
 uuid = "f01acfed-6be5-49b9-8763-0b41ea537fc3"
 version = "0.1.0"
 
