@@ -1,6 +1,10 @@
 using Test
+@doc doc"""
 
-function stacktrace()
+Cacher les stacktraces des tests, pour les remettre, décommentez les lignes 10 et 15.
+
+"""
+function cacher_stacktrace()
     Test.eval(quote
        function record(ts::DefaultTestSet, t::Union{Fail, Error})
            if myid() == 1

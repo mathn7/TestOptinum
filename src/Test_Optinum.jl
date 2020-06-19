@@ -4,8 +4,8 @@ using Test
 using Markdown
 
 # ne pas afficher le stacktrace des tests
-include("stacktrace.jl")
-export stacktrace
+include("cacher_stacktrace.jl")
+export cacher_stacktrace
 
 ## ajouter les fonctions de test
 include("fonctions_de_tests.jl")
