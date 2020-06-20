@@ -19,7 +19,7 @@ function tester_Algo_Newton(afficher::Bool,Algorithme_De_Newton::Function)
 	options = [eps; max_iters; tol]
 	tol_erreur = 1e-2
 
-	res = @testset "L'algorithme de Newton" begin 
+	res = @testset "L'algo de Newton" begin 
 		# le cas de test 1
 		x_min, fx_min, flag, nb_iters = Algorithme_De_Newton(fct1,grad_fct1,hess_fct1,pts1.x011,options)
 		if (afficher)
