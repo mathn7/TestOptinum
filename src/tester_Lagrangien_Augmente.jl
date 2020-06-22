@@ -34,8 +34,8 @@ function tester_Lagrangien_Augmente(afficher::Bool,Lagrangien_Augmente::Function
 	"# Les trois algorithmes d'optimisations sans contraintes utlisés"
 	algos = ["newton","gct","cauchy"]
 
-	res = @testset "Lagrangien augmenté  " begin 					
-		res = @testset "Avec $algo" for algo in algos									
+	@testset "Lagrangien augmenté  " begin 					
+		@testset "Avec $algo" for algo in algos									
 			# le cas de test 1
 			xmin,fxmin,flag,nbiters = Lagrangien_Augmente(algo,fct1,contrainte1,grad_fct1,hess_fct1,grad_contrainte1,
 			hess_contrainte1,pts2.x01,options)

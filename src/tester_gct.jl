@@ -22,7 +22,7 @@ function tester_gct(afficher::Bool,Gradient_Conjugue_Tronque::Function)
     # Tolérance utilisé dans les tests
     tol_test = 1e-3
 
-    res = @testset "Gradient-CT" begin 
+    @testset "Gradient-CT" begin 
         # le cas de test 1
         grad = [0 ; 0]
         Hess = [7 0 ; 0 2]
@@ -64,5 +64,5 @@ function tester_gct(afficher::Bool,Gradient_Conjugue_Tronque::Function)
         delta = 2  
         s = Gradient_Conjugue_Tronque(grad,Hess,[delta;max_iter;tol])        
         @test  s ≈ [-0.5 ; 0.0] atol = tol_test                                      
-   end 
+    end 
 end

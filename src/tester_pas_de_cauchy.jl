@@ -16,7 +16,7 @@ function tester_pas_de_cauchy(afficher::Bool,Pas_De_Cauchy::Function)
 
 	tol_erreur = 1e-6
 					
-	res = @testset "Pas de Cauchy" begin 	 	
+	@testset "Pas de Cauchy" begin 	 	
 		"# Pour la quadratique 1"
 		g = [0; 0]
 		H = [7 0 ; 0 2]

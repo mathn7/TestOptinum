@@ -34,12 +34,12 @@ function tester_regions_de_confiance(afficher::Bool,Regions_De_Confiance::Functi
 	options2 =[deltaMax,gamma1,gamma2,eta1,eta2,delta0_2,maxits,tol,eps]	
 
 	# l'ensemble de tests
-	res = @testset "La méthode des RC " begin 
+	@testset "La méthode des RC " begin 
 		###################################################													
 		#	les tests avec le pas de Cauchy 			  #
 		###################################################
 		# Un premier sous-ensemble de tests
-		res = @testset "avec Cauchy " begin 				
+		@testset "avec Cauchy " begin 				
 			# cas de test 1	
 			x_min11, fmin11, flag11, nb_iters11 = Regions_De_Confiance("cauchy",fct1,grad_fct1,hess_fct1,pts1.x011,options1)
 			if (afficher)
@@ -80,7 +80,7 @@ function tester_regions_de_confiance(afficher::Bool,Regions_De_Confiance::Functi
 		#	les tests avec le gradient conjugué tronqué   #
 		###################################################
 		# Un deuxième sous-ensemble de tests
-		res = @testset "avec GCT " begin 
+		@testset "avec GCT " begin 
 			# cas de test 1	
 			x_min11, fmin11, flag11, nb_iters11= Regions_De_Confiance("gct",fct1,grad_fct1,hess_fct1,pts1.x011,options1)
 			if (afficher)
