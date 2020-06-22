@@ -1,7 +1,7 @@
 using Test
 @doc doc"""
 
-Cacher les stacktraces des tests, pour les remettre, décommentez les lignes 10 et 15.
+Cacher les stacktraces des tests, pour les remettre, décommentez les lignes 11 et 16.
 
 """
 function cacher_stacktrace()
