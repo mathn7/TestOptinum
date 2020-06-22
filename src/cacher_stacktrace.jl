@@ -18,7 +18,6 @@ function cacher_stacktrace()
                end
            end
            push!(ts.results, t)
-           print(ts.results)
            t, isa(t, Error) || backtrace()
        end
        end)
