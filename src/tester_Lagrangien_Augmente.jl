@@ -19,7 +19,7 @@ function tester_Lagrangien_Augmente(afficher::Bool,Lagrangien_Augmente::Function
 
 	# initialisation des paramètres
 	lambda0 = 2
-	mu0 = 1000
+	mu0 = 100
 	tho = 2
 	epsilon = 1e-8
 	tol = 1e-5
