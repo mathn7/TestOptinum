@@ -13,10 +13,7 @@ Tester l'algorithme du gradient conjugué tronqué
    * la quadratique 6   
 """
 function tester_gct(afficher::Bool,Gradient_Conjugue_Tronque::Function)
-   
-    # consommer le stacktrace des tests    
-    #cacher_stacktrace()
-    
+
     tol = 1e-7
     max_iter = 100
     # Tolérance utilisé dans les tests

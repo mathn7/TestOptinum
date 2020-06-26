@@ -17,9 +17,6 @@ Tester l'algorithme du Lagrangien augmenté
 """
 function tester_Lagrangien_Augmente(afficher::Bool,Lagrangien_Augmente::Function)
 
-    # consommer le stacktrace des tests
-	#cacher_stacktrace()
-
 	# initialisation des paramètres
 	lambda0 = 2
 	mu0 = 10
@@ -27,12 +24,12 @@ function tester_Lagrangien_Augmente(afficher::Bool,Lagrangien_Augmente::Function
 	epsilon = 1e-8
 	tol = 1e-5
 	max_iters = 1000
-	options = [epsilon,tol,max_iters,lambda0,mu0,tho]
-	"# La tolérance utilisée dans les tests"
+	options = [epsilon, tol, max_iters, lambda0, mu0, tho]
+	# La tolérance utilisée dans les tests
 	tol_erreur = 1e-4
 	
-	"# Les trois algorithmes d'optimisations sans contraintes utlisés"
-	algos = ["newton","gct","cauchy"]
+	# Les trois algorithmes d'optimisations sans contraintes utlisés
+	algos = ["newton", "gct", "cauchy"]
 
 	@testset "Lagrangien augmenté  " begin 					
 		@testset "Avec $algo" for algo in algos									
