@@ -28,7 +28,7 @@ export tester_gct
 include("tester_regions_de_confiance.jl")
 export tester_regions_de_confiance
 
-include("tester_Lagrangien_Augmente.jl")
-export tester_Lagrangien_Augmente
+include("tester_lagrangien_augmente.jl")
+export tester_lagrangien_augmente
 
 end # module

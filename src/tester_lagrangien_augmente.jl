@@ -15,7 +15,7 @@ Tester l'algorithme du Lagrangien augmenté
       * fct1 : x01, x02
       * fct2 : x03, x04  
 """
-function tester_Lagrangien_Augmente(afficher::Bool,Lagrangien_Augmente::Function)
+function tester_lagrangien_augmente(afficher::Bool,Lagrangien_Augmente::Function)
 
 	# initialisation des paramètres
 	lambda0 = 2
