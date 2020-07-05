@@ -1,8 +1,8 @@
 # TestOptinum
 Module de tests
-| **Documentation** | **Intégration continue** | **Julia doc** |
-|:-----------------:|:------------------------:|:-------------:|
-| [![](https://img.shields.io/badge/docs-dev-blue.svg)](https://mathn7.github.io/TestOptinum/dev/) |[![Build Status](https://travis-ci.com/mathn7/TestOptinum.svg?branch=master)](https://travis-ci.com/mathn7/TestOptinum)|[![](https://img.shields.io/badge/Julia--docs-v1-informational)](https://docs.julialang.org) |
+| **Documentation** | **Intégration continue** | **Julia** |
+|:-----------------:|:------------------------:|:---------:|
+| [![](https://img.shields.io/badge/docs-dev-blue.svg)](https://mathn7.github.io/TestOptinum/dev/) |[![Build Status](https://travis-ci.com/mathn7/TestOptinum.svg?branch=master)](https://travis-ci.com/mathn7/TestOptinum)| [![](https://img.shields.io/github/v/release/JuliaLang/julia.svg)](https://docs.julialang.org) |
 
 
 ## installation
