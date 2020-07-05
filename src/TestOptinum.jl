@@ -16,8 +16,8 @@ export sol_fct1_augm,contrainte1,grad_contrainte1,hess_contrainte1
 export sol_fct2_augm,contrainte2,grad_contrainte2,hess_contrainte2
 export afficher_resultats
 
-include("tester_Algo_Newton.jl")
-export tester_Algo_Newton
+include("tester_algo_newton.jl")
+export tester_algo_newton
 
 include("tester_pas_de_cauchy.jl")
 export tester_pas_de_cauchy

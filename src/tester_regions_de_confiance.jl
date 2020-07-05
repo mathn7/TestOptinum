@@ -22,13 +22,13 @@ function tester_regions_de_confiance(afficher::Bool,Regions_De_Confiance::Functi
 	eta1 = 0.25
 	eta2 = 0.75
 	deltaMax = 1
+	tolCN1 = 1e-8
 	tol = 1e-8
 	maxits = 5000
 	delta0_1 = 2
 	delta0_2 = 1
-	eps = 1e-8
-	options1 =[deltaMax,gamma1,gamma2,eta1,eta2,delta0_1,maxits,tol,eps]
-	options2 =[deltaMax,gamma1,gamma2,eta1,eta2,delta0_2,maxits,tol,eps]	
+	options1 =[deltaMax,gamma1,gamma2,eta1,eta2,delta0_1,maxits,tolCN1,tol]
+	options2 =[deltaMax,gamma1,gamma2,eta1,eta2,delta0_2,maxits,tolCN1,tol]	
 
 	# l'ensemble de tests
 	@testset "La méthode des RC " begin 

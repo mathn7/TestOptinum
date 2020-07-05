@@ -8,12 +8,12 @@ Tester l'algorithme de Newton local
    * fct 1 : x011,x012
    * fct 2 : x021,x022
 """
-function tester_Algo_Newton(afficher::Bool,Algorithme_De_Newton::Function)
+function tester_algo_newton(afficher::Bool,Algorithme_De_Newton::Function)
 	
-	eps = 1e-6
 	max_iters = 50
+	tolCN1 = 1e-15
 	tol = 1e-15
-	options = [eps; max_iters; tol]
+	options = [max_iters, tolCN1, tol]
 	tol_erreur = 1e-2
 
 	@testset "L'algo de Newton" begin 
