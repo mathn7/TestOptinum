@@ -17,6 +17,6 @@ julia> using TestOptinum
 sachant que la fonction ``Lagrangien_Augmente`` est dèjà inclus
 ,on peut la tester avec la ligne de commande :
 ```julia
-julia>TestOptinum.test_Lagrangien_Augmente(false,Lagrangien_Augmente)
+julia> TestOptinum.test_Lagrangien_Augmente(false,Lagrangien_Augmente)
 ```
 le premier paramètre est pour l'affichage des details du test.
