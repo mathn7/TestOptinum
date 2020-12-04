@@ -9,20 +9,20 @@ Tester l'algorithme de Newton local
    * fct 2 : x021,x022
 """
 function tester_algo_newton(afficher::Bool,Algorithme_De_Newton::Function)
-	
+	println("Toto")
 	max_iters = 50
 	tolCN1 = 1e-15
 	tol = 1e-15
 	options = [max_iters, tolCN1, tol]
 	tol_erreur = 1e-2
 
-	@testset "L'algo de Newton" begin 
+	@testset "L'algo de Newton" begin
 		# le cas de test 1
 		x_min, fx_min, flag, nb_iters = Algorithme_De_Newton(fct1,grad_fct1,hess_fct1,pts1.x011,options)
 		if (afficher)
 			afficher_resultats("algorithme de Newton ","fct1","x011",x_min,fx_min,flag,sol_exacte_fct1,nb_iters)
 		end
-		@test isapprox(x_min, sol_exacte_fct1 , atol = tol_erreur)
+		@test isapprox(x_mi, sol_exacte_fct1 , atol = tol_erreur)
 
 		# le cas de test 2
 		x_min, fx_min, flag, nb_iters = Algorithme_De_Newton(fct1,grad_fct1,hess_fct1,pts1.x012,options)
@@ -43,6 +43,6 @@ function tester_algo_newton(afficher::Bool,Algorithme_De_Newton::Function)
 		if (afficher)
 			afficher_resultats("algorithme de Newton ","fct2","x022",x_min,fx_min,flag,sol_exacte_fct2,nb_iters)
 		end
-		@test x_min ≈ sol_exacte_fct2  atol = tol_erreur 
+		@test x_min ≈ sol_exacte_fct2  atol = tol_erreur
 	end
 end

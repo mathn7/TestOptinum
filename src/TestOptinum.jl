@@ -7,6 +7,7 @@ using Markdown
 include("cacher_stacktrace.jl")
 export cacher_stacktrace
 
+include("my_tests.jl")
 ## ajouter les fonctions de test
 include("fonctions_de_tests.jl")
 export pts1,pts2
