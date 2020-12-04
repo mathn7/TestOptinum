@@ -22,7 +22,7 @@ function tester_algo_newton(afficher::Bool,Algorithme_De_Newton::Function)
 		if (afficher)
 			afficher_resultats("algorithme de Newton ","fct1","x011",x_min,fx_min,flag,sol_exacte_fct1,nb_iters)
 		end
-		@test isapprox(x_mi, sol_exacte_fct1 , atol = tol_erreur)
+		@test isapprox(x_min, sol_exacte_fct1 , atol = tol_erreur)
 
 		# le cas de test 2
 		x_min, fx_min, flag, nb_iters = Algorithme_De_Newton(fct1,grad_fct1,hess_fct1,pts1.x012,options)
