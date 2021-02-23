@@ -2,6 +2,7 @@ module TestOptinum
 
 using Test
 using Markdown
+using LinearAlgebra
 
 # ne pas afficher le stacktrace des tests
 #include("cacher_stacktrace.jl")
