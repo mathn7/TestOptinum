@@ -5,8 +5,8 @@ using Markdown
 using LinearAlgebra
 
 # ne pas afficher le stacktrace des tests
-#include("cacher_stacktrace.jl")
-#export cacher_stacktrace
+include("cacher_stacktrace.jl")
+export cacher_stacktrace
 
 
 # Tolérance pour les tests d'égalité
