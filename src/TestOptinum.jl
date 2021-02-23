@@ -1,11 +1,11 @@
-# module TestOptinum
+module TestOptinum
 
 using Test
 using Markdown
 
 # ne pas afficher le stacktrace des tests
-#include("cacher_stacktrace.jl")
-#export cacher_stacktrace
+include("cacher_stacktrace.jl")
+export cacher_stacktrace
 
 
 # Tolérance pour les tests d'égalité
@@ -36,4 +36,4 @@ export tester_regions_de_confiance
 include("tester_lagrangien_augmente.jl")
 export tester_lagrangien_augmente
 
-# end # module
+end # module
