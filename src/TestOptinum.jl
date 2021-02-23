@@ -1,13 +1,17 @@
-module TestOptinum
+# module TestOptinum
 
 using Test
 using Markdown
 
 # ne pas afficher le stacktrace des tests
-include("cacher_stacktrace.jl")
-export cacher_stacktrace
+#include("cacher_stacktrace.jl")
+#export cacher_stacktrace
 
-include("my_tests.jl")
+
+# Tolérance pour les tests d'égalité
+tol_erreur = sqrt(eps())
+export tol_erreur
+
 ## ajouter les fonctions de test
 include("fonctions_de_tests.jl")
 export pts1,pts2
@@ -32,4 +36,4 @@ export tester_regions_de_confiance
 include("tester_lagrangien_augmente.jl")
 export tester_lagrangien_augmente
 
-end # module
+# end # module
